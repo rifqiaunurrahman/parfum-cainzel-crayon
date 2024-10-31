@@ -1,0 +1,211 @@
+/* CSS Responsive Modern Background dengan Animasi */
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family: "Courier New", Courier, monospace;
+  background: #1a1a2e;
+  color: #e0e0e0;
+}
+
+.background-animated {
+  width: 100%;
+  height: 100%;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/007/994/607/original/rainbow-coloured-hand-painted-watercolour-background-free-vector.jpg");
+  background-size: 300% 300%;
+  animation: backgroundShift 12s ease infinite;
+}
+
+/* Background Gradient Animation */
+@keyframes backgroundShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+}
+
+/* Logo */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+/* Kontainer utama */
+.container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 25px;
+  background: rgba(10, 10, 10, 0.85);
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 1.5s ease-out;
+}
+
+/* Animasi Ketik untuk Heading */
+h1 {
+  font-size: 2em;
+  color: #0ef;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px solid #0ef;
+  animation: typing 3s steps(20), blink 0.8s infinite;
+}
+
+/* Deskripsi Utama */
+p {
+  font-size: 1.1em;
+  color: #b3b3b3;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  animation: fadeInUp 1.5s ease forwards;
+  opacity: 0;
+}
+
+.container-boss {
+  font-size: 1.3em;
+  color: #ffffff;
+  margin-top: 10px;
+  animation: fadeInUp 1.8s ease forwards;
+  opacity: 0;
+  font-family: "Montserrat", sans-serif;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+/* Button */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.button {
+  padding: 12px 30px;
+  font-size: 1.1em;
+  color: #1a1a2e;
+  background-color: #0ef;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+  font-weight: 600;
+}
+
+.button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0px 8px 20px rgba(0, 238, 255, 0.3);
+}
+
+/* Keyframes */
+
+/* Fade-in untuk container utama */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Animasi Ketikan */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #0ef;
+  }
+}
+
+/* Animasi Fade-In-Up */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries untuk Responsivitas */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8em;
+  }
+  .container {
+    padding: 20px;
+    margin-top: 40px;
+  }
+  .logo {
+    width: 100px;
+    height: 100px;
+  }
+  .button {
+    padding: 10px 25px;
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5em;
+  }
+  .container {
+    padding: 15px;
+    margin-top: 30px;
+  }
+  p,
+  .container-boss {
+    font-size: 1em;
+  }
+  .button {
+    padding: 8px 20px;
+    font-size: 0.9em;
+  }
+}
